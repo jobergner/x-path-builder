@@ -51,7 +51,7 @@ function convertToXPath(el) {
         return "@" + key + "='" + value + "'";
     });
     var and = attrsStrings.length === 0 ? "" : " and ";
-    var textQuery = !el.containedText ? "" : and + "contains(text(), '" + el.containedText + "')";
+    var textQuery = !el.containedText ? "" : and + "contains(., '" + el.containedText + "')";
     var ancestorXPath = !el.ancestor ? "" : and + "ancestor::" + convertToXPath(el.ancestor);
     var descendantXPath = !el.descendant ? "" : and + ".//" + convertToXPath(el.descendant);
     return el.kind + "[" + attrsStrings.join(" and ") + textQuery + descendantXPath + ancestorXPath + "]";
