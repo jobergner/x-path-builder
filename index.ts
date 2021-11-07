@@ -44,8 +44,12 @@ class Element {
 		return this
 	}
 
-	gen() {
+	first() {
 		return `(//${convertToXPath(this)})[1]`
+	}
+
+	all() {
+		return `//${convertToXPath(this)}`
 	}
 }
 

@@ -9,8 +9,9 @@ test('basic test', () => {
 		.hasAncestor(
 			select("div").withAttributes({id: "fooID"})
 		)
-		.gen()
+		.first()
 
-	const expected = "(//div[@role='button' and .//span[contains(text(), 'foobar')] and ancestor::div[@id='fooID']])[1]"
+	const expected = "(//div[@role='button' and .//span[contains(., 'foobar')] and ancestor::div[@id='fooID']])[1]"
+	console.log(input)
 	expect(input).toBe(expected);
 });

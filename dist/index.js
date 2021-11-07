@@ -39,8 +39,11 @@ var Element = /** @class */ (function () {
         this.ancestor = el;
         return this;
     };
-    Element.prototype.gen = function () {
+    Element.prototype.first = function () {
         return "(//" + convertToXPath(this) + ")[1]";
+    };
+    Element.prototype.all = function () {
+        return "//" + convertToXPath(this);
     };
     return Element;
 }());
